@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<decorators defaultDir="/WEB-INF/views">
+	<!--<excludes> 此处用来定义不需要过滤的页面 <pattern>/resources/*</pattern>  </excludes>-->
+
+	<decorator name="nodecorate" />
+
+	<decorator name="school" page="decorators/main.jsp">
+	<!-- 我在纳闷了，这里为什么前面不能添加Spring_All的前缀 -->
+		<pattern>/ui/*</pattern> <!-- 这里表示需要添加装饰的页面 -->
+	</decorator>
+</decorators>
