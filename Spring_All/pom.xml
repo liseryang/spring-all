@@ -24,6 +24,8 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<mysql-connector-java.version>5.1.26</mysql-connector-java.version>
 		<sitemesh.version>2.4</sitemesh.version>
+		<org.apache.solr.version>1.4.0</org.apache.solr.version>
+
 	</properties>
 
 	<!-- 定义依赖包 -->
@@ -246,11 +248,27 @@
 			<scope>runtime</scope>
 		</dependency>
 
+
+		<!-- sitemesh -->
 		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>sitemesh</artifactId>
 			<version>${sitemesh.version}</version>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-solr</artifactId>
+			<version>1.1.0.RELEASE</version>
+		</dependency>
+
+
+		<!-- web flow 工作流之类的东东吗 -->
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>2.3.2.RELEASE</version>
 		</dependency>
 
 	</dependencies>
