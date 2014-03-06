@@ -12,8 +12,6 @@ public class UiCtrl {
 	@RequestMapping(value = "/siteMesh", method = RequestMethod.GET)
 	public String siteMesh(Model model) {
 		//model.addAttribute("TestAttribute", "欢迎进入");
-		return "/sitemesh/main/index";
+		return "/sitemesh/index";
 	}
-
-
 }
