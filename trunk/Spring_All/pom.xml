@@ -271,6 +271,13 @@
 			<version>2.3.2.RELEASE</version>
 		</dependency>
 
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.geronimo.bundles</groupId> -->
+<!-- 			<artifactId>dwr</artifactId> -->
+<!-- 			<version>3.0.M1_1</version> -->
+<!-- 		</dependency> -->
+
 	</dependencies>
 
 	<!-- 配置构建 -->

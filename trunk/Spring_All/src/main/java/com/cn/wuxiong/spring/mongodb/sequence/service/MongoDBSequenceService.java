@@ -25,7 +25,6 @@ public class MongoDBSequenceService {
 	 * @param collectionName
 	 */
 	public Long addOrIncSequence(String collectionName) {//
-
 		Character c = collectionName.charAt(0);
 		if (Character.isUpperCase(c)) {// 先将首字母转为小写
 			char t = Character.toLowerCase(c);
@@ -44,8 +43,7 @@ public class MongoDBSequenceService {
 			dao.save(sequence);
 
 		} else { // 记录自己的id那条记录存在
-			sequence.setCurrentValue(sequence.getCurrentValue() + 1);// 因为是新添加的
-																		// 所以就设置其当前id为1就可以了
+			sequence.setCurrentValue(sequence.getCurrentValue() + 1);// 记录+1
 			dao.save(sequence);
 		}
 		return sequence.getCurrentValue();
@@ -64,14 +62,13 @@ public class MongoDBSequenceService {
 			collectionName = t + collectionName.substring(1);
 		}
 
-		MongoDBSequence sequence = dao
-				.findOne((long) collectionName.hashCode());
+		MongoDBSequence sequence = dao.findOne((long) collectionName.hashCode());
 		if (null != sequence) {// 对应记录存在
 			Long currentVal = sequence.getCurrentValue();
 			return currentVal;
 		} else {// 对应的记录不存在
 			throw new Exception(
-					"The Collection was named collectionName is not exist.");
+					"The Collection was named "+collectionName+" is not exist.");
 		}
 
 	}
